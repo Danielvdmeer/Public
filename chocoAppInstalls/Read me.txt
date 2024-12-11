@@ -1,0 +1,13 @@
+Dit script kan gebruikt worden in Intune om Chocolatey Apps te installeren. 
+
+Wanneer dit script/package wordt gebruikt hoeft er niet voor ieder package een nieuw package gemaakt te worden.
+
+Dit werkt als volgt:
+
+Bij het Install command in Intune vul je het volgende in:
+Install command: powershell.exe -noprofile -windowstyle hidden -executionpolicy bypass -file .\ChocolateyAppInstall.ps1 -action Install -chocopackage <PACKAGENAME>
+
+Bij het Uninstall command in Intune geef je het volgende in:
+Uninstall command: powershell.exe -noprofile -windowstyle hidden -executionpolicy bypass -file .\ChocolateyAppInstall.ps1 -action uninstall -chocopackage <PACKAGENAME> 
+
+Zo hoef je alleen de waarde 'Packagename' aan te passen naar de naam van het Chocolatey package dat je wilt installeren. 
